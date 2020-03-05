@@ -12,10 +12,27 @@ function populate() {
     for(var i = 0; i< choices.length; i++) {
       var element = document.getElementById("choice" + i);
       element.innerHTML = choices[i];
+      guess("btn" + i, choices[i]);
     }
+  }
+};
+
+function guess(id, guess) {
+  var button = document.getElementById(id);
+  button.onclick = function() {
+    quiz.guess(guess);
+    populate();
   }
 }
 
+function showScores() {
+  var gameOverHtml = "<h1>Result</h1>";
+  gameOverHtml += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
+  var element = document.getElementById("quiz");
+  element.innerHTML = gameOverHtml;
+}
+
+// create questions:
 var questions = [
   new Question("Which one is not an object oriented programming language?", ["Java", "C#", "C++", "C"], "C"),
   new Question("Which language is used for styling web pages?", ["HTML", "Jquery", "CSS", "XML"], "CSS"),
@@ -24,6 +41,8 @@ var questions = [
   new Question("MVC is a ___.", ["Language", "Library", "Framework", "All"], "Framework")
 ];
 
+// create quiz:
 var quiz = new Quiz(questions);
 
+// display quiz:
 populate();
