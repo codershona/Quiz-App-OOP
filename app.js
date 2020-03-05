@@ -1,6 +1,6 @@
 function populate() {
   if(quiz.isEnded()) {
-    // showScores();
+    showScores();
   }
   else {
     // show // QUESTION:
@@ -30,7 +30,7 @@ function showProgress() {
   var currentQuestionNumber = quiz.questionIndex + 1;
   var element = document.getElementById("progress");
   element.innerHTML = "Question " + currentQuestionNumber + "of " + quiz.questions.length;
-  
+
 }
 
 function showScores() {
@@ -38,7 +38,7 @@ function showScores() {
   gameOverHtml += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
   var element = document.getElementById("quiz");
   element.innerHTML = gameOverHtml;
-}
+};
 
 // create questions:
 var questions = [
