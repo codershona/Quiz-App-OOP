@@ -8,5 +8,5 @@
 	
 <img src="https://user-images.githubusercontent.com/57604500/121789624-b3360080-cbd7-11eb-92cb-dbb7e7071949.png" width=996>
 <br />
-<h3 align="center">CHAT APP</h3>
+<h3 align="center">Quiz-App-OOP</h3>
 </p>
